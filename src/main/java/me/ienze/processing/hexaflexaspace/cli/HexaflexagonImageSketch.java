@@ -2,6 +2,7 @@ package me.ienze.processing.hexaflexaspace.cli;
 
 import me.ienze.processing.hexaflexaspace.Hexaflexagon;
 import me.ienze.processing.hexaflexaspace.Hexaflexaspace;
+import me.ienze.processing.hexaflexaspace.display.PGraphicsDisplayer;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -24,7 +25,9 @@ public class HexaflexagonImageSketch extends PApplet {
     public HexaflexagonImageSketch(Path in, Path out, double size, boolean watch) throws IOException {
         this.in = in;
         this.out = out;
-        hexaflexagon = new Hexaflexagon(size);
+        if(size > 0) {
+            hexaflexagon = new Hexaflexagon(size);
+        }
         if(watch) {
             watchService = FileSystems.getDefault().newWatchService();
         }
@@ -33,6 +36,11 @@ public class HexaflexagonImageSketch extends PApplet {
     @Override
     public void settings() {
         reloadImage();
+
+        if(hexaflexagon == null) {
+            hexaflexagon = new Hexaflexagon(Math.min(image.width, image.height) / 2);
+        }
+
         size(Math.max((int)hexaflexagon.getWidth(), image.width), Math.max((int)hexaflexagon.getHeight(), image.height));
     }
 
@@ -50,10 +58,14 @@ public class HexaflexagonImageSketch extends PApplet {
         redrawImageBackground();
         redrawImage();
 
-        try {
-            watchImage(in.toAbsolutePath());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(watchService != null) {
+            try {
+                watchImage(in.toAbsolutePath());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            exit();
         }
     }
 
@@ -101,7 +113,7 @@ public class HexaflexagonImageSketch extends PApplet {
         image(image, 0, 0, width * image.width, height * image.height);
 
         hexaflexaspace.update();
-        hexaflexaspace.getFoldedHexaflexagonGraphics().save(out);
+        hexaflexaspace.getFoldedHexaflexagonGraphics().save(out.toAbsolutePath().toString());
     }
 
     private void reloadImage() {
