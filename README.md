@@ -2,6 +2,8 @@
 
 This java library allows you to transform Processing sketches into image in a way that all sides that can connect in some state do connect.
 
+![Folded tree](docs/fold.png)
+
 There are 2 ways to use this library avalaible, directly in PApplet class orby using cli interface.
 
 ### Usage through cli
