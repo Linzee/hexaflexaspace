@@ -1,8 +1,8 @@
-package me.ienze.hexaflexaspace.debugging;
+package me.ienze.processing.hexaflexaspace.debugging;
 
-import me.ienze.hexaflexaspace.Hexaflexagon;
-import me.ienze.hexaflexaspace.Hexaflexaspace;
-import me.ienze.hexaflexaspace.display.PGraphicsDisplayer;
+import me.ienze.processing.hexaflexaspace.Hexaflexagon;
+import me.ienze.processing.hexaflexaspace.Hexaflexaspace;
+import me.ienze.processing.hexaflexaspace.display.PGraphicsDisplayer;
 import processing.core.PApplet;
 
 /**

@@ -1,6 +1,4 @@
-package me.ienze.hexaflexaspace.display;
-
-import processing.core.PGraphics;
+package me.ienze.processing.hexaflexaspace.display;
 
 import java.util.ArrayList;
 import java.util.Iterator;

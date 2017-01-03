@@ -1,4 +1,4 @@
-package me.ienze.hexaflexaspace;
+package me.ienze.processing.hexaflexaspace;
 
 import processing.core.PApplet;
 import processing.core.PVector;

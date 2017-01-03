@@ -1,6 +1,6 @@
-package me.ienze.hexaflexaspace.display;
+package me.ienze.processing.hexaflexaspace.display;
 
-import me.ienze.hexaflexaspace.Hexaflexagon;
+import me.ienze.processing.hexaflexaspace.Hexaflexagon;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 

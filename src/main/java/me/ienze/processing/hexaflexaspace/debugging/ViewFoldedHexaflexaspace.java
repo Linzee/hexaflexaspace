@@ -1,7 +1,7 @@
-package me.ienze.hexaflexaspace.debugging;
+package me.ienze.processing.hexaflexaspace.debugging;
 
-import me.ienze.hexaflexaspace.Hexaflexagon;
-import me.ienze.hexaflexaspace.Hexaflexaspace;
+import me.ienze.processing.hexaflexaspace.Hexaflexagon;
+import me.ienze.processing.hexaflexaspace.Hexaflexaspace;
 import processing.core.PApplet;
 import processing.core.PVector;
 

@@ -1,4 +1,4 @@
-package me.ienze.hexaflexaspace.display;
+package me.ienze.processing.hexaflexaspace.display;
 
 import processing.core.PApplet;
 import processing.core.PGraphics;
